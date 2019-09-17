@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css?family=Crete+Round|Patua+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_login.css">
+    <title>Login page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<section id="banner">
+    <header>
+        <div class="logo-container">
+            <a class="logo" href="main.html">Jamie</a>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#">Products</a></li>
+                <li><a class="nav-link" href="#">Recipe</a></li>
+                <li><a class="signup" href="login.html">Sign Up</a></li>                
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+    <section class="presentation">
+		<section class="login">
+        <form class="login-form" action="login.jsp">
+   			<div class="container">
+		    	<h1>Log In</h1><br>
+		      
+		      	<label for="id"><b>ID</b></label><br>
+		      	<input type="text" placeholder="Enter ID" id="id" name="id" required>
+		
+		      	<label for="psw"><b>Password</b></label>
+		      	<input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+		      	<p>Not a member? <a href="signup.html" style="color:dodgerblue">Sign Up</a></p>
+				<br>
+		      	<div class="log-btn">
+        			<button type="reset" class="cancelbtn">Cancel</button>
+        			<button type="submit" class="loginbtn">Login</button>
+      			</div>
+    		</div>
+  		</form>
+           
+        </section>
+        </section>
+    </main>
+    </section>
+
+    <footer id="footer">
+    	<div class="conclusion">
+    		<p>This is a footer</p>
+    	</div>
+    </footer>
+</body>
+</html>

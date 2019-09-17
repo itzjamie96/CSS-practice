@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css?family=Crete+Round|Patua+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_signup.css">
+    <title>Signup page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style type="text/css">
+	.error{
+	color: red;	
+	}
+</style>
+
+<script type="text/javascript">
+	
+	const log = console.log;
+	let xdata;
+	
+	$(function() {
+			$("#id_check").click(function() {
+			idcheck();
+		})
+	})
+	
+	function idcheck() {
+		$.ajax({
+			url:"JSON/id_check.jsp",
+			dataType: "json",
+			data: {
+				id: $("#id").val()
+			},
+			success: function(data) {
+				if(data.id == undefined) {
+					$("#msg1").html("Available ID")
+				} else {
+					$("#msg1").html("ID already in use")
+				}
+			},
+			error: function(e) {
+				alert("error :( )"+e)				
+			}
+		});
+	}
+	
+	
+
+</script>
+</head>
+<body>
+	<section id="banner">
+    <header>
+        <div class="logo-container">
+            <a class="logo" href="main.html">Jamie</a>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#">Products</a></li>
+                <li><a class="nav-link" href="#">Recipe</a></li>
+                <li><a class="signup" href="signup.html">Sign Up</a></li>                
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+    <section class="presentation">
+		<section class="signup-page">
+        <form class="signup-form" action="adduser.jsp">
+   			<div class="container">
+		    	<h1>Sign Up</h1>
+                <p>Already a member? <a href="login.html" style="color:dodgerblue">Login</a></p>
+
+		      	<label for="sid"><b>ID</b></label><br>
+		      	<input type="text" placeholder="Enter ID" name="id" required id="sid">
+		      	<input type="button" value="Check ID" id="id_check"><br>
+				<span id="msg1" class="error"></span>
+				
+				<label for="name"><b>Name</b></label><br>
+		      	<input type="text" placeholder="Enter Name" id="name" name="name" required>
+		
+		      	<label for="psw"><b>Password</b></label>
+		      	<input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+		      	<div class="log-btn">
+        			<button type="reset" class="cancelbtn">Cancel</button>
+        			<button type="submit" class="signupbtn">Sign Up</button>
+      			</div>
+    		</div>
+  		</form>
+           
+        </section>
+        </section>
+    </main>
+    </section>
+
+    <footer id="footer">
+    	<div class="conclusion">
+    		<p>This is a footer</p>
+    	</div>
+    </footer>
+</body>
+</html>
